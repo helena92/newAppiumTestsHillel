@@ -19,6 +19,11 @@ public class TestCases extends AppiumTestBase{
     }
 
     @Test
+    protected void goToSurprisePlaylistSection(){
+        surprisePlaylistHelper.swipeToSurprisePLSection();
+    }
+
+    @Test
     protected void videoTimeFilterTest(){
         surprisePlaylistHelper.videoTimeFilterTest();
     }

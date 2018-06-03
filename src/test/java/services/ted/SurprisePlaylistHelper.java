@@ -12,10 +12,14 @@ public class SurprisePlaylistHelper {
         this.driver = driver;
     }
 
-    public void videoTimeFilterTest() {
+    public void swipeToSurprisePLSection(){
         Tools.swipeByCoords(109, 1370, 882, 1370);
         MobileElement sectionName = driver.findElementById("sectionText");
         Assert.assertEquals(sectionName.getText(), "Surprise me");
+    }
+
+
+    public void videoTimeFilterTest() {
         MobileElement filteredSection = driver.findElementByXPath("//android.widget.TextView[@text='Jaw-dropping']");
         filteredSection.click();
         MobileElement selectedTimeEl = driver.findElementById("timeTextView");
