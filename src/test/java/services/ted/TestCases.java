@@ -13,17 +13,17 @@ public class TestCases extends AppiumTestBase{
         loginHelper = new LoginHelper(driver);
         surprisePlaylistHelper = new SurprisePlaylistHelper(driver);
     }
-    @Test
+    @Test(priority = 1)
     protected void loginTest() {
         loginHelper.loginTest();
     }
 
-    @Test
+    @Test(priority = 2)
     protected void goToSurprisePlaylistSection(){
         surprisePlaylistHelper.swipeToSurprisePLSection();
     }
 
-    @Test
+    @Test(priority = 3)
     protected void videoTimeFilterTest(){
         surprisePlaylistHelper.videoTimeFilterTest();
     }

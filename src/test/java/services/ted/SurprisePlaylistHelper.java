@@ -27,11 +27,11 @@ public class SurprisePlaylistHelper {
         MobileElement continueBtn = driver.findElementById("surpriseMeAction");
         continueBtn.click();
         List<MobileElement> videos = driver.findElementsById("talkListItemRow");
-        for (int i = 0; i < videos.size(); ++i) {
-            List <MobileElement> textBoxes = videos.get(i).findElementsByClassName("android.widget.TextView");
+        for (MobileElement video : videos) {
+            List<MobileElement> textBoxes = video.findElementsByClassName("android.widget.TextView");
             String videoDurationText = textBoxes.get(textBoxes.size() - 1).getText();
             String[] splitTime = videoDurationText.split(":");
-            int videoDurationSeconds = Integer.parseInt(splitTime[0])*60 + Integer.parseInt(splitTime[1]);
+            int videoDurationSeconds = Integer.parseInt(splitTime[0]) * 60 + Integer.parseInt(splitTime[1]);
             Assert.assertTrue(videoDurationSeconds <= selectedSeconds);
         }
     }
