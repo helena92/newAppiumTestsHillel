@@ -20,7 +20,7 @@ public class LoginHelper {
         emailInput.sendKeys("echornobai@intersog.com");
         MobileElement pwdInput = driver.findElementById("user_password");
         pwdInput.sendKeys("testpass");
-        MobileElement logInBtn = driver.findElementByAccessibilityId("Log in");
+        MobileElement logInBtn = driver.findElementByXPath("//android.widget.Button[@text='Log in']");
         logInBtn.click();
         MobileElement OKButton = driver.findElementById("button2");
         OKButton.click();

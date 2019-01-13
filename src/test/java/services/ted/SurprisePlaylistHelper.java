@@ -28,8 +28,7 @@ public class SurprisePlaylistHelper {
         continueBtn.click();
         List<MobileElement> videos = driver.findElementsById("talkListItemRow");
         for (MobileElement video : videos) {
-            List<MobileElement> textBoxes = video.findElementsByClassName("android.widget.TextView");
-            String videoDurationText = textBoxes.get(textBoxes.size() - 1).getText();
+            String videoDurationText = video.findElementById("talksListTimeTextView").getText();
             String[] splitTime = videoDurationText.split(":");
             int videoDurationSeconds = Integer.parseInt(splitTime[0]) * 60 + Integer.parseInt(splitTime[1]);
             Assert.assertTrue(videoDurationSeconds <= selectedSeconds);
